@@ -10,4 +10,10 @@ LOGGER.info(s"keysToPrint = $keysToPrint")
 LOGGER.info(s"keysToPrint size = ${keysToPrint.size}")
 
 println(s"keysToPrint = $keysToPrint")
-println(s"keysToPrint size = ${keysToPrint.size}")
+println(s"keysToPrint size = ${keysToPrint.size
+
+}")
+
+
+LOGGER.info(s"[BQ_DIAG] Number of BQ keys = ${keys.size}")
+LOGGER.info(s"[BQ_DIAG] Keys = ${keys.mkString(", ")}")
