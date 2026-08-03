@@ -1,31 +1,13 @@
-import scala.jdk.CollectionConverters._
-
-hadoopConf.iterator().asScala.foreach { e =>
-  LOGGER.info(s"[HADOOP_CONF] ${e.getKey} = ${e.getValue}")
-}
-
-
-val hadoopConf = spark.sparkContext.hadoopConfiguration
-
-LOGGER.info(s"[BQ_DIAG] hadoopConf null = ${hadoopConf == null}")
-LOGGER.info(s"[BQ_DIAG] fs.defaultFS = ${hadoopConf.get("fs.defaultFS")}")
-LOGGER.info(s"[BQ_DIAG] google.cloud.project.id = ${hadoopConf.get("google.cloud.project.
+println(s"project = ${spark.conf.getOption("project")}")
+println(s"parentProject = ${spark.conf.getOption("parentProject")}")
+println(s"temporaryGcsBucket = ${spark.conf.getOption("temporaryGcsBucket")}")
+println(s"viewsEnabled = ${spark.conf.getOption("viewsEnabled")}")
+println(s"materializationDataset = ${spark.conf.getOption("materializationDataset")}")
+println(s"materializationProject = ${spark.conf.getOption("materializationProject")}")
 
 
-spark.sparkContext.getConf.getAll.foreach {
-  case (k, v) =>
-    LOGGER.info(s"[SPARK_CONF] $k = $v")
-}
+LOGGER.info(s"keysToPrint = $keysToPrint")
+LOGGER.info(s"keysToPrint size = ${keysToPrint.size}")
 
-
-import scala.jdk.CollectionConverters._
-
-hadoopConf.iterator().asScala.foreach { e =>
-  LOGGER.info(s"[HADOOP_CONF] ${e.getKey} = ${e.getValue}")
-}
-
-
-
-
-
-
+println(s"keysToPrint = $keysToPrint")
+println(s"keysToPrint size = ${keysToPrint.size}")
